@@ -1,16 +1,16 @@
 import { z } from 'zod';
 
 export const devisSchema = z.object({
-  company: z.string().min(2).max(120),
-  contactName: z.string().min(2).max(120),
-  email: z.string().email(),
-  phone: z.string().min(8).max(30),
+  company: z.string().trim().min(2).max(120),
+  contactName: z.string().trim().min(2).max(120),
+  email: z.email(),
+  phone: z.string().trim().min(8).max(30),
   eventType: z.enum(['team-building', 'seminaire', 'atelier', 'autre']),
   peopleCount: z.coerce.number().min(5).max(500),
-  message: z.string().min(20).max(1500),
-  callbackWindow: z.string().optional(),
+  message: z.string().trim().min(20).max(1500),
+  callbackWindow: z.string().trim().max(120).optional(),
   consent: z.literal(true),
-  honeypot: z.string().optional(),
+  honeypot: z.string().max(0).optional(),
 });
 
 export type DevisInput = z.infer<typeof devisSchema>;
