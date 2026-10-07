@@ -1,6 +1,6 @@
-import about from '../../content/about.json';
 import type { AboutContent } from './types';
+import { fixturesSource } from './fixtures-source';
 
 export async function getAboutContent(): Promise<AboutContent> {
-  return about as AboutContent;
+  return fixturesSource.getAboutContent();
 }

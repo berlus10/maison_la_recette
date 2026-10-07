@@ -36,6 +36,7 @@ export const testimonialSchema = z.object({
   name: nonEmptyText,
   role: z.string().optional(),
   quote: nonEmptyText,
+  isFeatured: z.boolean().optional(),
 });
 
 export const aboutContentSchema = z.object({
