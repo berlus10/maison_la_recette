@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY ?? '');
+
 
 type QuoteNotification = {
   company: string;
@@ -14,6 +14,11 @@ type QuoteNotification = {
 };
 
 export async function sendQuoteNotification(data: QuoteNotification) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    throw new Error('RESEND_API_KEY is not defined');
+  }
+  const resend = new Resend(apiKey);
   const to = process.env.CONTACT_TO_EMAIL ?? 'julie@maisonlarecette.fr';
 
   await resend.emails.send({
