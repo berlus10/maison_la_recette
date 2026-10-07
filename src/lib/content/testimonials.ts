@@ -1,8 +1,8 @@
 import type { Testimonial } from './types';
-import { fixturesSource } from './fixtures-source';
+import { activeContentSource } from './active-source';
 
 export async function getTestimonials(options?: {
   featuredOnly?: boolean;
 }): Promise<Testimonial[]> {
-  return fixturesSource.getTestimonials(options);
+  return activeContentSource.getTestimonials(options);
 }

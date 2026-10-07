@@ -1,6 +1,6 @@
 import type { Experience } from './types';
-import { fixturesSource } from './fixtures-source';
+import { activeContentSource } from './active-source';
 
 export async function getExperiences(): Promise<Experience[]> {
-  return fixturesSource.getExperiences();
+  return activeContentSource.getExperiences();
 }
