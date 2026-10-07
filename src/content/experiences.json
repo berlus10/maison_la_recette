@@ -1,0 +1,24 @@
+[
+  {
+    "id": "atelier-saison",
+    "slug": "atelier-saison",
+    "title": "Atelier cuisine de saison",
+    "shortDescription": "Une expérience immersive pour découvrir des produits locaux et des recettes simples.",
+    "description": "Un atelier de 2h guidé par Julie, avec cuisine collective, échanges et dégustation.",
+    "audience": "particuliers",
+    "duration": "2h",
+    "category": "atelier",
+    "isFeatured": true
+  },
+  {
+    "id": "team-cooking",
+    "slug": "team-cooking",
+    "title": "Team building culinaire",
+    "shortDescription": "Un moment d’échange autour de la cuisine durable en équipe.",
+    "description": "Mission de cohésion et atelier collaboratif pour les entreprises.",
+    "audience": "entreprises",
+    "duration": "3h",
+    "category": "team-building",
+    "isFeatured": true
+  }
+]
