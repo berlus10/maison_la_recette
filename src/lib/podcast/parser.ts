@@ -29,7 +29,7 @@ export async function fetchPodcastFeed(): Promise<PodcastFeedItem[]> {
       return getFallbackPodcastItems();
     }
 
-    return items.map((item: any, index: number) => ({
+    return items.map((item: Record<string, unknown>, index: number) => ({
       id: String(item.guid ?? `${index + 1}`),
       title: String(item.title ?? `Épisode ${index + 1}`),
       slug: String(item.title ?? `episode-${index + 1}`)
