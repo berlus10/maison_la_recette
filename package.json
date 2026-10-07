@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "podcast:snapshot": "tsx --env-file=.env.local scripts/snapshot-episodes.ts"
   },
   "dependencies": {
     "fast-xml-parser": "^5.11.2",

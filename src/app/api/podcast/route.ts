@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
-import { fetchPodcastFeed } from '../../../lib/podcast/parser';
+import { getPodcastEpisodes } from '../../../lib/podcast/get-episodes';
 
 export async function GET() {
-  const items = await fetchPodcastFeed();
-  return NextResponse.json({ items }, { status: 200 });
+  const result = await getPodcastEpisodes();
+  return NextResponse.json(result, { status: 200 });
 }
