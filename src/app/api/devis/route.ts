@@ -6,7 +6,7 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    if (body.honeypot) {
+    if (body.website) {
       return NextResponse.json(
         { ok: false, message: 'Invalid payload' },
         { status: 400 },

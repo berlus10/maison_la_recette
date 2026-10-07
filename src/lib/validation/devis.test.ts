@@ -1,43 +1,41 @@
 import { describe, expect, it } from 'vitest';
 import { devisSchema } from './devis';
 
-const validDevis = {
-  company: 'Acme',
-  contactName: 'Alice Martin',
-  email: 'alice@example.com',
-  phone: '0600000000',
-  eventType: 'team-building',
-  peopleCount: '20',
-  message: 'Nous souhaitons organiser un atelier pour notre équipe.',
+const valid = {
+  fullName: 'Camille Martin',
+  email: 'camille@acme.fr',
+  organization: 'Acme',
+  groupSize: '15-30',
+  period: 'novembre 2026',
   consent: true,
-  honeypot: '',
 };
 
 describe('devisSchema', () => {
-  it('accepts valid data and coerces the participant count to a number', () => {
-    const result = devisSchema.safeParse(validDevis);
-
-    expect(result.success).toBe(true);
-    if (result.success) {
-      expect(result.data.peopleCount).toBe(20);
-    }
+  it('accepte une demande valide', () => {
+    expect(devisSchema.safeParse(valid).success).toBe(true);
   });
-
-  it('rejects an invalid email', () => {
+  it('accepte les champs facultatifs', () => {
     expect(
-      devisSchema.safeParse({ ...validDevis, email: 'not-an-email' }).success,
-    ).toBe(false);
+      devisSchema.safeParse({
+        ...valid,
+        phone: '0600000000',
+        offer: 'food-tour',
+      }).success,
+    ).toBe(true);
   });
-
-  it('requires explicit consent', () => {
-    expect(
-      devisSchema.safeParse({ ...validDevis, consent: false }).success,
-    ).toBe(false);
+  it('refuse sans consentement', () => {
+    expect(devisSchema.safeParse({ ...valid, consent: false }).success).toBe(
+      false,
+    );
   });
-
-  it('rejects a filled honeypot', () => {
+  it('refuse une taille de groupe inconnue', () => {
+    expect(devisSchema.safeParse({ ...valid, groupSize: '1000' }).success).toBe(
+      false,
+    );
+  });
+  it('refuse un e-mail invalide', () => {
     expect(
-      devisSchema.safeParse({ ...validDevis, honeypot: 'spam' }).success,
+      devisSchema.safeParse({ ...valid, email: 'pas-un-mail' }).success,
     ).toBe(false);
   });
 });
