@@ -1,6 +1,8 @@
-import testimonials from '../../content/testimonials.json';
 import type { Testimonial } from './types';
+import { activeContentSource } from './active-source';
 
-export async function getTestimonials(): Promise<Testimonial[]> {
-  return testimonials as Testimonial[];
+export async function getTestimonials(options?: {
+  featuredOnly?: boolean;
+}): Promise<Testimonial[]> {
+  return activeContentSource.getTestimonials(options);
 }
