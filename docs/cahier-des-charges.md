@@ -1,6 +1,7 @@
 # Cahier des charges - Maison La Recette
 
 Le site vitrine de Julie doit présenter clairement :
+
 - le podcast "La Recette"
 - les ateliers et expériences
 - le studio de production

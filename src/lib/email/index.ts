@@ -1,7 +1,5 @@
 import { Resend } from 'resend';
 
-
-
 type QuoteNotification = {
   company: string;
   contactName: string;

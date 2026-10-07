@@ -16,29 +16,35 @@ export default function HomePage() {
 
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[var(--color-brand)]">
+            <p className="mb-4 text-sm tracking-[0.2em] text-[var(--color-brand)] uppercase">
               Podcast • studio • événements
             </p>
-            <h1 className="text-5xl font-bold leading-tight">
+            <h1 className="text-5xl leading-tight font-bold">
               Une cuisine engagée, des rencontres inspirantes.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-[var(--color-muted)]">
-              Maison La Recette regroupe le podcast de Julie, les ateliers et les
-              expériences autour de l’alimentation durable, pour les entreprises comme
-              pour les particuliers.
+              Maison La Recette regroupe le podcast de Julie, les ateliers et
+              les expériences autour de l’alimentation durable, pour les
+              entreprises comme pour les particuliers.
             </p>
 
             <div className="mt-8 flex gap-4">
-              <Link href="/podcast" className="rounded-full bg-[var(--color-brand)] px-6 py-3 text-white">
+              <Link
+                href="/podcast"
+                className="rounded-full bg-[var(--color-brand)] px-6 py-3 text-white"
+              >
                 Écouter le podcast
               </Link>
-              <Link href="/contact" className="rounded-full border border-[var(--color-brand)] px-6 py-3 text-[var(--color-brand)]">
+              <Link
+                href="/contact"
+                className="rounded-full border border-[var(--color-brand)] px-6 py-3 text-[var(--color-brand)]"
+              >
                 Demander un devis
               </Link>
             </div>
           </div>
 
-          <div className="rounded-3xl bg-white p-8 shadow-soft">
+          <div className="shadow-soft rounded-3xl bg-white p-8">
             <h2 className="text-xl font-semibold">Ce que tu trouveras</h2>
             <ul className="mt-6 space-y-4 text-[var(--color-muted)]">
               <li>• Épisodes de podcast classés par saison</li>
