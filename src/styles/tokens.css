@@ -1,24 +1,36 @@
-:root {
-  --color-bg: #f7f3ee;
-  --color-surface: #ffffff;
-  --color-surface-alt: #efe4d7;
-  --color-text: #1f1a17;
-  --muted-color: #4f4a46;
-  --brand-color: #8d5d3d;
-  --color-brand-dark: #5d3d2b;
-  --color-brand-soft: #d7bba2;
 
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-12: 3rem;
+@theme static {
+  /* Podcast : vert */
+  --color-podcast-900: #1c352a;
+  --color-podcast-700: #335e4a;
+  --color-podcast-600: #4b866a;
+  --color-podcast-500: #62af8a;
+  --color-podcast-400: #89c3a7;
+  --color-podcast-300: #b0d6c4;
+  --color-podcast-100: #d7eae1;
 
-  --radius-sm: 0.5rem;
-  --radius-md: 1rem;
-  --radius-lg: 1.5rem;
+  /* Évènement et expériences : rouge corail */
+  --color-event-900: #8f1500;
+  --color-event-700: #b43723;
+  --color-event-600: #da5a45;
+  --color-event-500: #ff7c68;
+  --color-event-400: #ff9c8d;
+  --color-event-300: #ffbcb1;
+  --color-event-100: #ffdcd6;
 
-  --shadow-soft: 0 10px 30px rgba(20, 12, 8, 0.08);
+  /* Studio : bleu pétrole */
+  --color-studio-900: #16343b;
+  --color-studio-700: #22515d;
+  --color-studio-600: #2e6f7e;
+  --color-studio-500: #3a8ca0;
+  --color-studio-400: #68a9b8;
+  --color-studio-300: #95c5d1;
+  --color-studio-100: #c3e2e9;
+
+  /* Neutres */
+  --color-cream: #fcf8f1;
+  --color-ink: #241c16;
+  --color-ink-soft: #5a4d43;
+
+  --radius-card: 1.5rem;
 }
