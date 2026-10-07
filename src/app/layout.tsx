@@ -3,7 +3,8 @@ import '../styles/tokens.css';
 
 export const metadata: Metadata = {
   title: 'Maison La Recette',
-  description: 'Podcast, studio et expériences autour de l’alimentation durable.',
+  description:
+    'Podcast, studio et expériences autour de l’alimentation durable.',
   robots: { index: false, follow: false },
 };
 
