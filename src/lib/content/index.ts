@@ -9,11 +9,13 @@ export * from './types';
 
 import { getAboutContent } from './about';
 import { getExperiences } from './experiences';
+import { getSiteSettings } from './site-settings';
 import { getTestimonials } from './testimonials';
 
 // Switch this import to sanity-source after configuring the Sanity project.
 export const content = {
   getAboutContent,
   getExperiences,
+  getSiteSettings,
   getTestimonials,
 };
