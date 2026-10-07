@@ -45,5 +45,16 @@ export const aboutContentSchema = z.object({
   values: z.array(nonEmptyText),
 });
 
+export const siteSettingsSchema = z.object({
+  tagline: nonEmptyText,
+  contactEmail: z.email(),
+  socialLinks: z.array(
+    z.object({
+      label: nonEmptyText,
+      url: z.url(),
+    }),
+  ),
+});
+
 export const experiencesSchema = z.array(experienceSchema);
 export const testimonialsSchema = z.array(testimonialSchema);

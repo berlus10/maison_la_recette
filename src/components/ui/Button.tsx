@@ -14,7 +14,10 @@ const variants: Record<ButtonVariant, string> = {
 };
 
 // À utiliser aussi sur un <button> : <button className={buttonClasses('primary')}>
-export function buttonClasses(variant: ButtonVariant = 'primary', className = '') {
+export function buttonClasses(
+  variant: ButtonVariant = 'primary',
+  className = '',
+) {
   return `${base} ${variants[variant]} ${className}`.trim();
 }
 
