@@ -1,17 +1,40 @@
 'use client';
 
-import { useRef, useState, type SyntheticEvent } from 'react';
+import { useEffect, useRef, useState, type SyntheticEvent } from 'react';
 
 const PREVIEW_SECONDS = 60;
-const AUDIO_PROXY_URL = '/api/podcast/preview-audio';
+const AUDIO_PROXY_URL = '/api/podcast/audio';
 
-export function PodcastPreview() {
+const toneClasses = {
+  light: {
+    button:
+      'border-white/30 bg-white/10 text-white hover:bg-white/15 focus-visible:outline-white',
+    fill: 'bg-[#2B2119]/40',
+    message: 'text-white',
+  },
+};
+
+export function PodcastPreview({
+  src = AUDIO_PROXY_URL,
+  className = '',
+  tone = 'light',
+  onPlayingChange,
+}: {
+  src?: string;
+  className?: string;
+  tone?: keyof typeof toneClasses;
+  onPlayingChange?: (isPlaying: boolean) => void;
+}) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(false);
   const [showNativeControls, setShowNativeControls] = useState(false);
+
+  useEffect(() => {
+    onPlayingChange?.(isPlaying || isLoading);
+  }, [isPlaying, isLoading, onPlayingChange]);
 
   async function togglePlayback() {
     const audio = audioRef.current;
@@ -67,7 +90,7 @@ export function PodcastPreview() {
     <div>
       <audio
         ref={audioRef}
-        src={AUDIO_PROXY_URL}
+        src={src}
         preload="none"
         controls={showNativeControls}
         tabIndex={showNativeControls ? 0 : -1}
@@ -102,11 +125,11 @@ export function PodcastPreview() {
         aria-label={buttonLabel}
         aria-pressed={isPlaying}
         aria-busy={isLoading}
-        className="relative isolate flex min-h-12 w-full max-w-[360px] items-center gap-3 overflow-hidden rounded-full border border-white/30 bg-white/10 px-4 py-2 text-left text-sm font-medium text-white transition-colors hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-base"
+        className={`relative isolate flex min-h-12 w-full max-w-[360px] items-center gap-3 overflow-hidden rounded-full border px-4 py-2 text-left text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 sm:text-base ${toneClasses[tone].button} ${className}`}
       >
         <span
           aria-hidden="true"
-          className="absolute inset-y-0 left-0 -z-10 bg-[#2B2119]/40 transition-[width] duration-200 ease-linear"
+          className={`absolute inset-y-0 left-0 -z-10 transition-[width] duration-200 ease-linear ${toneClasses[tone].fill}`}
           style={{ width: `${progress}%` }}
         />
         <span
@@ -148,7 +171,10 @@ export function PodcastPreview() {
         <span className="min-w-0">{buttonLabel}</span>
       </button>
       {error ? (
-        <p role="status" className="mt-2 text-sm text-white">
+        <p
+          role="status"
+          className={`mt-2 text-sm ${toneClasses[tone].message}`}
+        >
           Le lecteur simplifié n’a pas pu démarrer. Essaie avec les contrôles
           audio du navigateur ci-dessus.
         </p>

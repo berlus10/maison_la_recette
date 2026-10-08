@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import type { Testimonial } from '@/lib/content/types';
 
-type TestimonialTone = 'event' | 'studio';
+type TestimonialTone = 'event' | 'studio' | 'podcast';
 
 const backgroundClasses: Record<TestimonialTone, string> = {
   event: 'bg-[#FFDCD6]',
   studio: 'bg-[#C3E2E9]',
+  podcast: 'bg-[#D7EAE1]',
 };
 
 export function TestimonialGrid({
@@ -32,10 +33,7 @@ export function TestimonialGrid({
         const rating = testimonial.rating;
 
         return (
-          <li
-            key={testimonial.id}
-            className={index === 1 ? 'xl:mt-3' : ''}
-          >
+          <li key={testimonial.id} className={index === 1 ? 'xl:mt-3' : ''}>
             <figure
               className={`flex h-full min-h-[285px] flex-col rounded-[1.25rem] p-7 sm:p-10 ${backgroundClasses[tone]}`}
             >

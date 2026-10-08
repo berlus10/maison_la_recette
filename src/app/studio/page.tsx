@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { ButtonLink } from '@/components/ui/Button';
-import { Container } from '@/components/ui/Container';
+import { ExpertStrip } from '@/components/sections/ExpertStrip';
 import { TestimonialGrid } from '@/components/sections/TestimonialGrid';
+import { Container } from '@/components/ui/Container';
 import { UniverseCard } from '@/components/ui/UniverseCard';
 import { getSiteSettings } from '@/lib/content/site-settings';
 import { getTestimonials } from '@/lib/content/testimonials';
@@ -12,30 +13,6 @@ export const metadata: Metadata = {
   description:
     'Un studio pour donner une voix aux personnes et aux initiatives qui font évoluer notre alimentation.',
 };
-
-const experts = [
-  {
-    surname: 'Gomez',
-    firstName: 'Guillaume',
-    image: '/studio/experts/Guilaume.png',
-  },
-  { surname: 'Sammut', firstName: 'Nadia', image: '/studio/experts/Nadia.png' },
-  {
-    surname: 'Têtedoie',
-    firstName: 'Christian',
-    image: '/studio/experts/Christian.png',
-  },
-  {
-    surname: 'Labro',
-    firstName: 'Camille',
-    image: '/studio/experts/Camille.png',
-  },
-  {
-    surname: 'Tavernier',
-    firstName: 'Boris',
-    image: '/studio/experts/boris.png',
-  },
-];
 
 const projects = [
   {
@@ -116,10 +93,6 @@ const projects = [
   },
 ];
 
-function expertInitials(surname: string, firstName: string) {
-  return `${surname.charAt(0)}${firstName.charAt(0)}`;
-}
-
 function StudioSectionHeading({
   title,
   intro,
@@ -155,8 +128,8 @@ export default async function StudioPage() {
                 Studio
               </h1>
               <p className="mt-3 max-w-[904px] text-base leading-relaxed text-[#2B2119] sm:text-lg lg:text-[20px] lg:leading-[26px]">
-                Maison La Recette explore l’alimentation de demain à travers
-                des rencontres, des expériences et des histoires. Podcast,
+                Maison La Recette explore l’alimentation de demain à travers des
+                rencontres, des expériences et des histoires. Podcast,
                 événements, ateliers et studio : découvrez celles et ceux qui
                 font évoluer notre façon de produire, cuisiner et consommer.
                 Ici, on parle d’alimentation durable, mais surtout, on la vit.
@@ -168,43 +141,7 @@ export default async function StudioPage() {
             >
               En découvrir plus <span aria-hidden="true">→</span>
             </ButtonLink>
-            <div>
-              <p className="mb-4 text-base text-[#2B2119] sm:text-lg lg:text-xl">
-                Des experts et professionnels qui nous expliquent :
-              </p>
-              <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-5">
-                {experts.map((expert) => (
-                  <li
-                    key={expert.surname}
-                    className="flex min-h-[110px] flex-col items-center justify-center rounded-[20px] bg-[#FBF8F2] px-2 py-3 text-center text-[#2B2119]"
-                  >
-                    {expert.image ? (
-                      <Image
-                        src={expert.image}
-                        alt=""
-                        aria-hidden="true"
-                        width={99}
-                        height={66}
-                        className="mb-1 h-[54px] w-[81px] rounded-xl object-cover"
-                      />
-                    ) : (
-                      <span
-                        aria-hidden="true"
-                        className="mb-1 grid size-10 place-items-center rounded-full bg-[#C3E2E9] text-sm font-semibold"
-                      >
-                        {expertInitials(expert.surname, expert.firstName)}
-                      </span>
-                    )}
-                    <span className="font-medium leading-tight">
-                      {expert.surname}
-                    </span>
-                    <span className="text-sm leading-tight">
-                      {expert.firstName}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ExpertStrip />
           </div>
           <figure className="relative min-h-[320px] overflow-hidden rounded-[20px] sm:min-h-[460px] lg:min-h-[600px]">
             <Image

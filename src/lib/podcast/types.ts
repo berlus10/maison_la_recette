@@ -13,5 +13,10 @@ export const podcastFeedItemSchema = z.object({
 });
 
 export const podcastFeedItemsSchema = z.array(podcastFeedItemSchema);
+export const podcastFeedPageSchema = z.object({
+  items: podcastFeedItemsSchema,
+  source: z.enum(['ausha', 'fallback']),
+  totalCount: z.number().int().nonnegative(),
+});
 
 export type PodcastFeedItem = z.infer<typeof podcastFeedItemSchema>;
