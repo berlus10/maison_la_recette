@@ -1,14 +1,39 @@
 import type { Metadata } from 'next';
-import { Plus_Jakarta_Sans } from 'next/font/google';
+import localFont from 'next/font/local';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import './globals.css';
 
-// Police de substitution. Quand la DA fournit Neulis (licence vérifiée), c'est ici qu'on change.
-const font = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  variable: '--font-src',
+const neulisNeue = localFont({
+  src: [
+    { path: './fonts/neulis-neue-thin.otf', weight: '100' },
+    { path: './fonts/neulis-neue-extralight.otf', weight: '200' },
+    { path: './fonts/neulis-neue-light.otf', weight: '300' },
+    { path: './fonts/neulis-neue.otf', weight: '400' },
+    { path: './fonts/neulis-neue-medium.otf', weight: '500' },
+    { path: './fonts/neulis-neue-bold.otf', weight: '700' },
+    { path: './fonts/neulis-neue-black.otf', weight: '900' },
+  ],
+  variable: '--font-neulis-neue',
   display: 'swap',
+  preload: false,
+});
+
+const neulisSans = localFont({
+  src: [
+    { path: './fonts/neulis-sans-hairline.otf', weight: '100' },
+    { path: './fonts/neulis-sans-extralight.otf', weight: '200' },
+    { path: './fonts/neulis-sans-light.otf', weight: '300' },
+    { path: './fonts/neulis-sans.otf', weight: '400' },
+    { path: './fonts/neulis-sans-medium.otf', weight: '500' },
+    { path: './fonts/neulis-sans-semibold.otf', weight: '600' },
+    { path: './fonts/neulis-sans-bold.otf', weight: '700' },
+    { path: './fonts/neulis-sans-extrabold.otf', weight: '800' },
+    { path: './fonts/neulis-sans-black.otf', weight: '900' },
+  ],
+  variable: '--font-neulis-sans',
+  display: 'swap',
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -22,7 +47,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className={font.variable}>
+    <html lang="fr" className={`${neulisNeue.variable} ${neulisSans.variable}`}>
       <body className="bg-cream font-text text-ink antialiased">
         <a
           href="#contenu"

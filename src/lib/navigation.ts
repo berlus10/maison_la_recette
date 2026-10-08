@@ -7,16 +7,20 @@ export const MAIN_NAV: NavLink[] = [
 ];
 
 export const HEADER_ACTIONS: { secondary: NavLink; primary: NavLink } = {
-  secondary: { label: 'À propos', href: '/a-propos' },
-  primary: { label: 'Demander un devis', href: '/devis' },
+  secondary: { label: 'Mon histoire', href: '/a-propos' },
+  primary: { label: 'Contact', href: '/contact' },
 };
 
-export const FOOTER_NAV: NavLink[] = [
-  { label: 'Accueil', href: '/' },
-  { label: 'À propos', href: '/a-propos' },
-  { label: 'Contact', href: '/contact' },
-  ...MAIN_NAV,
+export const FOOTER_ROWS: NavLink[][] = [
+  [
+    { label: 'Home', href: '/' },
+    { label: 'A Propos', href: '/a-propos' },
+    { label: 'Contacts', href: '/contact' },
+  ],
+  MAIN_NAV,
 ];
+
+export const FOOTER_NAV: NavLink[] = FOOTER_ROWS.flat();
 
 export const LEGAL_NAV: NavLink[] = [
   { label: 'Mentions légales', href: '/mentions-legales' },
