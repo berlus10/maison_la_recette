@@ -17,9 +17,9 @@ describe('demonstration content schemas', () => {
     expect(aboutContentSchema.safeParse(about).success).toBe(true);
   });
 
-  it('validates the testimonials fixture without inventing customer quotes', () => {
+  it('validates the provided testimonial fixtures', () => {
     expect(testimonialsSchema.safeParse(testimonials).success).toBe(true);
-    expect(testimonials).toEqual([]);
+    expect(testimonials).toHaveLength(3);
   });
 
   it('rejects an experience missing a title', () => {

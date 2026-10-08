@@ -13,7 +13,7 @@ export async function Footer() {
   return (
     <footer className="bg-footer mt-24 rounded-t-[20px] xl:mt-[214px]">
       <div className="mx-auto flex w-full max-w-[1728px] flex-col gap-8 px-5 pt-10 pb-12 sm:px-8 md:flex-row md:items-center md:justify-between xl:px-[100px] xl:pt-[50px] xl:pb-[100px]">
-        <div className="flex items-center gap-5">
+        <div className="flex flex-wrap items-center gap-5">
           <Link
             href="/"
             aria-label="Maison La Recette, accueil"
