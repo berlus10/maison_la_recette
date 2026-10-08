@@ -8,12 +8,16 @@ import { MobileMenu } from './MobileMenu';
 export function Header() {
   return (
     <header className="bg-cream relative z-40">
-      <Container className="flex items-center justify-between gap-6 py-4">
-        <Link href="/" aria-label="Maison La Recette, accueil">
+      <Container className="flex min-h-20 items-center justify-between gap-4 py-3 sm:gap-6">
+        <Link
+          href="/"
+          aria-label="Maison La Recette, accueil"
+          className="shrink-0"
+        >
           <Logo />
         </Link>
-        <nav aria-label="Navigation principale" className="hidden md:block">
-          <ul className="flex items-center gap-8 font-bold">
+        <nav aria-label="Navigation principale" className="hidden xl:block">
+          <ul className="flex items-center gap-5 font-bold 2xl:gap-8">
             {MAIN_NAV.map((link) => (
               <li key={link.href}>
                 <Link
@@ -26,7 +30,7 @@ export function Header() {
             ))}
           </ul>
         </nav>
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-2 xl:flex 2xl:gap-3">
           <ButtonLink href={HEADER_ACTIONS.secondary.href} variant="secondary">
             {HEADER_ACTIONS.secondary.label}
           </ButtonLink>

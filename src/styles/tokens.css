@@ -27,9 +27,55 @@
   --color-studio-100: #c3e2e9;
 
   /* Neutres */
-  --color-cream: #fcf8f1;
-  --color-ink: #241c16;
-  --color-ink-soft: #5a4d43;
+  --color-cream: #fbf8f2;
+  --color-header: #fdf8f2;
+  --color-footer: #d9d9d9;
+  --color-ink: #2b2119;
+  --color-mark: #1e1e1e;
 
   --radius-card: 1.5rem;
+}
+
+@utility row-podcast {
+  background-image: linear-gradient(
+    174.98deg,
+    var(--color-podcast-500) 4.32%,
+    var(--color-podcast-900) 96.29%
+  );
+}
+@utility row-event {
+  background-image: linear-gradient(
+    175.28deg,
+    var(--color-event-500) 3.89%,
+    var(--color-event-900) 96.3%
+  );
+}
+@utility row-studio {
+  background-image: linear-gradient(
+    176.45deg,
+    var(--color-studio-500) 2.97%,
+    var(--color-studio-900) 97.16%
+  );
+}
+
+@utility panel-podcast {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-podcast-500) 0.28%,
+    var(--color-podcast-900) 90.39%
+  );
+}
+@utility panel-event {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-event-500) 0.28%,
+    var(--color-event-900) 90.39%
+  );
+}
+@utility panel-studio {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-studio-500) 0.28%,
+    var(--color-studio-900) 90.39%
+  );
 }
