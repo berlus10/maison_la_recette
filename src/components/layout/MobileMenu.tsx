@@ -18,7 +18,7 @@ export function MobileMenu({
   const close = () => setOpen(false);
 
   return (
-    <div className="md:hidden">
+    <div className="xl:hidden">
       <button
         type="button"
         aria-expanded={open}

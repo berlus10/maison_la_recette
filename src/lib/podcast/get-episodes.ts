@@ -6,7 +6,11 @@ export type PodcastFeedResult = {
   source: 'ausha' | 'fallback';
 };
 
-export async function getPodcastEpisodes(): Promise<PodcastFeedResult> {
+export async function getPodcastEpisodes({
+  fresh = false,
+}: {
+  fresh?: boolean;
+} = {}): Promise<PodcastFeedResult> {
   const rssUrl = process.env.PODCAST_RSS_URL;
 
   if (!rssUrl) {
@@ -17,10 +21,12 @@ export async function getPodcastEpisodes(): Promise<PodcastFeedResult> {
   }
 
   try {
-    const response = await fetch(rssUrl, {
-      next: { revalidate: 3600 },
-      signal: AbortSignal.timeout(10_000),
-    });
+    const response = await fetch(
+      rssUrl,
+      fresh
+        ? { cache: 'no-store', signal: AbortSignal.timeout(10_000) }
+        : { next: { revalidate: 3600 }, signal: AbortSignal.timeout(10_000) },
+    );
 
     if (!response.ok) {
       throw new Error(
