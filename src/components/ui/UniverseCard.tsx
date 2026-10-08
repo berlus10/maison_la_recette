@@ -16,6 +16,7 @@ type Props = {
   layout?: 'default' | 'split' | 'wide';
   images?: CardImage[];
   badge?: string;
+  pinSrc?: string;
   media?: ReactNode;
   href?: string;
   linkLabel?: string;
@@ -31,6 +32,7 @@ export function UniverseCard({
   layout = 'default',
   images = [],
   badge,
+  pinSrc,
   media,
   href,
   linkLabel,
@@ -81,7 +83,11 @@ export function UniverseCard({
               src={image.src}
               alt={image.alt}
               fill
-              sizes="(min-width: 1600px) 468px, (min-width: 768px) 30vw, 90vw"
+              sizes={
+                layout === 'wide'
+                  ? '(min-width: 1600px) 998px, (min-width: 768px) 62vw, 90vw'
+                  : '(min-width: 1600px) 468px, (min-width: 768px) 30vw, 90vw'
+              }
               className="rounded-2xl object-cover"
             />
           </div>
@@ -115,6 +121,17 @@ export function UniverseCard({
           ) : null}
         </div>
       </div>
+      {pinSrc ? (
+        <Image
+          src={pinSrc}
+          alt=""
+          aria-hidden="true"
+          width={68}
+          height={68}
+          sizes="(min-width: 468px) 68px, 15vw"
+          className="absolute top-[12%] left-[9%] z-40 aspect-square w-[15%] min-w-10 max-w-[68px] object-contain"
+        />
+      ) : null}
       {href && !cta ? (
         href.startsWith('mailto:') ? (
           <a

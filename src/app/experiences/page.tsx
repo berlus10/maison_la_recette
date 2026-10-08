@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { ButtonLink } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
+import { TestimonialGrid } from '@/components/sections/TestimonialGrid';
 import { content } from '@/lib/content';
 import { ExperienceShowcase } from './ExperienceShowcase';
 
@@ -17,12 +18,6 @@ export default async function ExperiencesPage() {
     content.getTestimonials(),
     content.getSiteSettings(),
   ]);
-  const featuredTestimonials = testimonials.filter(
-    (testimonial) => testimonial.isFeatured,
-  );
-  const visibleTestimonials = (
-    featuredTestimonials.length > 0 ? featuredTestimonials : testimonials
-  ).slice(0, 3);
   return (
     <>
       <section className="pt-8 pb-8 sm:pt-12 sm:pb-10 lg:pt-16">
@@ -144,68 +139,7 @@ export default async function ExperiencesPage() {
               et surtout de beaux moments autour de l’alimentation durable.
             </p>
           </div>
-          {visibleTestimonials.length > 0 ? (
-            <ul className="grid items-center gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {visibleTestimonials.map((testimonial, index) => {
-                const rating = testimonial.rating;
-                return (
-                  <li
-                    key={testimonial.id}
-                    className={index === 1 ? 'xl:mt-3' : ''}
-                  >
-                    <figure className="flex h-full min-h-[285px] flex-col rounded-[1.25rem] bg-[#FFDCD6] p-7 sm:p-10">
-                      <div className="flex items-center gap-5">
-                        <Image
-                          src="/experiences/img_avis.png"
-                          alt={`Portrait de ${testimonial.name}`}
-                          width={80}
-                          height={80}
-                          className="size-[4.8rem] shrink-0 rounded-full object-cover"
-                        />
-                        <div className="min-w-0">
-                          <p className="font-title text-ink text-lg leading-tight">
-                            {testimonial.name}
-                          </p>
-                          {testimonial.role ? (
-                            <p className="text-ink-soft mt-1 text-sm">
-                              {testimonial.role}
-                            </p>
-                          ) : null}
-                          {rating !== undefined ? (
-                            <div className="mt-2 flex items-center gap-4">
-                              <span
-                                role="img"
-                                aria-label={`Note : ${rating} sur 5`}
-                                className="inline-flex items-center gap-0.5"
-                              >
-                                {Array.from({ length: rating }, (_, star) => (
-                                  <Image
-                                    key={star}
-                                    src="/experiences/Star.svg"
-                                    alt=""
-                                    aria-hidden="true"
-                                    width={42}
-                                    height={38}
-                                    className="h-[2.375rem] w-[2.625rem]"
-                                  />
-                                ))}
-                              </span>
-                              <span className="text-ink text-base">
-                                {rating}/5
-                              </span>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <blockquote className="text-ink mt-6 flex-1 text-lg leading-relaxed">
-                        « {testimonial.quote} »
-                      </blockquote>
-                    </figure>
-                  </li>
-                );
-              })}
-            </ul>
-          ) : null}
+          <TestimonialGrid testimonials={testimonials} tone="event" />
         </Container>
       </section>
 

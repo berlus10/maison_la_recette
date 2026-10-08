@@ -10,8 +10,13 @@ Ce document sert à guider les mises à jour du contenu du site.
 
 ## Mode de mise à jour
 
-- via Sanity si le studio est actif
+- la page publique du Studio est disponible sur `/studio`
+- le back-office Sanity est disponible sur `/studio/cms` si Sanity est configuré
 - sinon via JSON de démonstration
+
+En local, si Sanity ne se charge pas, l’origine utilisée (par exemple
+`http://localhost:3000`) doit être autorisée dans les paramètres CORS du projet
+Sanity.
 
 ## Bonnes pratiques
 

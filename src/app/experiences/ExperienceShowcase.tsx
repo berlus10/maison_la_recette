@@ -163,6 +163,7 @@ export function ExperienceShowcase({
                   <UniverseCard
                     key={experience.id}
                     tone="event"
+                    pinSrc="/experiences/puce.svg"
                     layout={isWide ? 'wide' : 'split'}
                     className={
                       isWide
