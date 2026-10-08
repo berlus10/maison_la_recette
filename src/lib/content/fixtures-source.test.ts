@@ -11,9 +11,17 @@ describe('fixtures content source', () => {
     );
   });
 
-  it('returns no unapproved or invented testimonials', async () => {
-    expect(await content.getTestimonials()).toEqual([]);
-    expect(await content.getTestimonials({ featuredOnly: true })).toEqual([]);
+  it('returns the approved testimonial fixtures with their ratings', async () => {
+    const testimonials = await content.getTestimonials();
+    const featuredTestimonials = await content.getTestimonials({
+      featuredOnly: true,
+    });
+
+    expect(testimonials).toHaveLength(3);
+    expect(testimonials.map((testimonial) => testimonial.rating)).toEqual([
+      4, 4, 4,
+    ]);
+    expect(featuredTestimonials).toHaveLength(3);
   });
 
   it('returns validated about content', async () => {

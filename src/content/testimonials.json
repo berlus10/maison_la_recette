@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "id": "quentin-faure",
+    "name": "Quentin FAURE",
+    "quote": "Julie sait créer un vrai moment de partage. Une animation dynamique, accessible et parfaitement adaptée à notre équipe.",
+    "rating": 4,
+    "isFeatured": true
+  },
+  {
+    "id": "loris-rodrigues",
+    "name": "Loris RODRIGUES",
+    "quote": "Génial, je me suis bien amusé. J’ai fortement apprécié la visite réalisée par Julie.",
+    "rating": 4,
+    "isFeatured": true
+  },
+  {
+    "id": "charlotte-guillot",
+    "name": "Charlotte GUILLOT",
+    "quote": "Une expérience à la fois ludique et enrichissante. On repart avec plein d’idées concrètes pour mieux manger au quotidien !",
+    "rating": 4,
+    "isFeatured": true
+  }
+]
