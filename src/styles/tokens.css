@@ -1,0 +1,81 @@
+@theme static {
+  /* Podcast : vert */
+  --color-podcast-900: #1c352a;
+  --color-podcast-700: #335e4a;
+  --color-podcast-600: #4b866a;
+  --color-podcast-500: #62af8a;
+  --color-podcast-400: #89c3a7;
+  --color-podcast-300: #b0d6c4;
+  --color-podcast-100: #d7eae1;
+
+  /* Évènement et expériences : rouge corail */
+  --color-event-900: #8f1500;
+  --color-event-700: #b43723;
+  --color-event-600: #da5a45;
+  --color-event-500: #ff7c68;
+  --color-event-400: #ff9c8d;
+  --color-event-300: #ffbcb1;
+  --color-event-100: #ffdcd6;
+
+  /* Studio : bleu pétrole */
+  --color-studio-900: #16343b;
+  --color-studio-700: #22515d;
+  --color-studio-600: #2e6f7e;
+  --color-studio-500: #3a8ca0;
+  --color-studio-400: #68a9b8;
+  --color-studio-300: #95c5d1;
+  --color-studio-100: #c3e2e9;
+
+  /* Neutres */
+  --color-cream: #fbf8f2;
+  --color-header: #fdf8f2;
+  --color-footer: #d9d9d9;
+  --color-ink: #2b2119;
+  --color-mark: #1e1e1e;
+
+  --radius-card: 1.5rem;
+}
+
+@utility row-podcast {
+  background-image: linear-gradient(
+    174.98deg,
+    var(--color-podcast-500) 4.32%,
+    var(--color-podcast-900) 96.29%
+  );
+}
+@utility row-event {
+  background-image: linear-gradient(
+    175.28deg,
+    var(--color-event-500) 3.89%,
+    var(--color-event-900) 96.3%
+  );
+}
+@utility row-studio {
+  background-image: linear-gradient(
+    176.45deg,
+    var(--color-studio-500) 2.97%,
+    var(--color-studio-900) 97.16%
+  );
+}
+
+@utility panel-podcast {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-podcast-500) 0.28%,
+    var(--color-podcast-900) 90.39%
+  );
+}
+@utility panel-event {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-event-500) 0.28%,
+    var(--color-event-900) 90.39%
+  );
+}
+@utility panel-studio {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-studio-500) 0.28%,
+    var(--color-studio-900) 90.39%
+  );
+}

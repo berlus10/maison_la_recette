@@ -24,4 +24,4 @@ Projet du workshop My Digital School, octobre 2026.
 
 ## Documentation
 
-`CONTRIBUTING.md` · `docs/decisions.md` · cahier des charges (ajouter le lien)
+`CONTRIBUTING.md` · `docs/decisions.md` · [Cahier des charges](docs/cahier-des-charges.md)

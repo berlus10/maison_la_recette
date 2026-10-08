@@ -1,0 +1,46 @@
+[
+  {
+    "id": "atelier-culinaire",
+    "slug": "atelier-culinaire",
+    "title": "Atelier culinaire",
+    "shortDescription": "Un atelier de cuisine de deux heures autour de l’alimentation durable.",
+    "description": "Une expérience de deux heures, proposée aux particuliers et aux entreprises.",
+    "audience": "particuliers",
+    "duration": "2h",
+    "category": "atelier",
+    "isFeatured": true
+  },
+  {
+    "id": "food-tour",
+    "slug": "food-tour",
+    "title": "Food tour",
+    "shortDescription": "Une découverte de trois heures autour de l’alimentation durable.",
+    "description": "Une expérience de trois heures, proposée aux particuliers et aux entreprises.",
+    "audience": "particuliers",
+    "duration": "3h",
+    "category": "tour",
+    "isFeatured": true
+  },
+  {
+    "id": "immersion-a-la-ferme",
+    "slug": "immersion-a-la-ferme",
+    "title": "Immersion à la ferme",
+    "shortDescription": "Une journée d’immersion pour découvrir le quotidien d’une ferme.",
+    "description": "Une expérience d’une journée, proposée aux particuliers et aux entreprises.",
+    "audience": "entreprises",
+    "duration": "1 journée",
+    "category": "immersion",
+    "isFeatured": true
+  },
+  {
+    "id": "evenement-entreprise",
+    "slug": "evenement-entreprise",
+    "title": "Événement d’entreprise",
+    "shortDescription": "Une expérience culinaire pour les équipes, séminaires et team buildings.",
+    "description": "Un format conçu pour les événements d’entreprise, à préciser avec Julie.",
+    "audience": "entreprises",
+    "duration": "3h",
+    "category": "team-building",
+    "isFeatured": true
+  }
+]
