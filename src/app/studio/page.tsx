@@ -4,6 +4,7 @@ import { ButtonLink } from '@/components/ui/Button';
 import { ExpertStrip } from '@/components/sections/ExpertStrip';
 import { TestimonialGrid } from '@/components/sections/TestimonialGrid';
 import { Container } from '@/components/ui/Container';
+import { PageBackground } from '@/components/ui/PageBackground';
 import { UniverseCard } from '@/components/ui/UniverseCard';
 import { getSiteSettings } from '@/lib/content/site-settings';
 import { getTestimonials } from '@/lib/content/testimonials';
@@ -119,7 +120,7 @@ export default async function StudioPage() {
   ]);
 
   return (
-    <>
+    <PageBackground src="/Vector2.svg">
       <section className="py-10 sm:py-14 lg:py-16">
         <div className="mx-auto grid w-full max-w-[1630px] items-end gap-10 px-6 sm:px-10 lg:grid-cols-[minmax(0,904fr)_minmax(0,525fr)] lg:gap-[clamp(2rem,5.73vw,6.1875rem)] lg:px-[50px]">
           <div className="flex min-w-0 flex-col gap-10 lg:gap-14">
@@ -247,6 +248,6 @@ export default async function StudioPage() {
           </div>
         </Container>
       </section>
-    </>
+    </PageBackground>
   );
 }

@@ -7,6 +7,7 @@ import { showAllPlatforms } from '@/lib/podcast/platforms';
 import { TestimonialGrid } from '@/components/sections/TestimonialGrid';
 import { ButtonLink } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
+import { PageBackground } from '@/components/ui/PageBackground';
 import { getSiteSettings } from '@/lib/content/site-settings';
 import { getTestimonials } from '@/lib/content/testimonials';
 import { getPodcastEpisodes } from '@/lib/podcast/get-episodes';
@@ -27,7 +28,7 @@ export default async function PodcastPage() {
   ]);
 
   return (
-    <>
+    <PageBackground src="/Vector3.svg">
       <section className="py-8 sm:py-12 lg:py-16">
         <Container className="max-w-[1528px]">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,904fr)_minmax(0,525fr)] lg:items-start lg:gap-[clamp(2rem,5.73vw,6.1875rem)]">
@@ -45,7 +46,7 @@ export default async function PodcastPage() {
                     changement.
                   </p>
                 </div>
-                <div className="flex lg:-translate-y-2">
+                <div className="relative z-20 flex lg:-translate-y-2">
                   <PodcastPlatformMenu
                     platforms={showAllPlatforms}
                     label="Lire sur ma plateforme"
@@ -54,7 +55,7 @@ export default async function PodcastPage() {
                   />
                 </div>
               </div>
-              <div className="lg:-translate-y-3">
+              <div className="relative z-0 lg:-translate-y-3">
                 <ExpertStrip title="Des experts et professionnels qui nous expliquent :" />
               </div>
             </div>
@@ -154,6 +155,6 @@ export default async function PodcastPage() {
           </div>
         </Container>
       </section>
-    </>
+    </PageBackground>
   );
 }

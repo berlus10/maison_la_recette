@@ -31,11 +31,15 @@ describe('fixtures content source', () => {
     expect(about.values).toContain('Alimentation durable');
   });
 
-  it('returns validated site settings with no social links until configured', async () => {
+  it('returns validated site settings with configured social links', async () => {
     const settings = await content.getSiteSettings();
 
     expect(settings.contactEmail).toBe('julie@maisonlarecette.fr');
-    expect(settings.socialLinks).toEqual([]);
+    expect(settings.socialLinks.map((social) => social.label)).toEqual([
+      'Instagram',
+      'LinkedIn',
+      'YouTube',
+    ]);
   });
 
   it('exposes the content accessors through one stable interface', () => {

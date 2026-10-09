@@ -1,10 +1,16 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { content } from '@/lib/content';
 import { FOOTER_ROWS } from '@/lib/navigation';
 import { Logo } from './Logo';
 
 const circle =
   'grid h-12 w-12 place-items-center rounded-full bg-mark text-sm font-medium text-cream xl:h-[68px] xl:w-[68px]';
+const socialIcons: Record<string, string> = {
+  Instagram: '/insta.svg',
+  LinkedIn: '/linkedin.svg',
+  YouTube: '/youtube.svg',
+};
 
 export async function Footer() {
   const site = await content.getSiteSettings();
@@ -49,9 +55,19 @@ export async function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className={circle}
+                    className="block size-12 xl:size-[68px]"
                   >
-                    {s.label.charAt(0)}
+                    {socialIcons[s.label] ? (
+                      <Image
+                        src={socialIcons[s.label]}
+                        alt=""
+                        width={68}
+                        height={68}
+                        className="size-full"
+                      />
+                    ) : (
+                      <span className={circle}>{s.label.charAt(0)}</span>
+                    )}
                   </a>
                 </li>
               ))
