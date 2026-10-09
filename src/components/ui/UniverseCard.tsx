@@ -129,7 +129,7 @@ export function UniverseCard({
           width={68}
           height={68}
           sizes="(min-width: 468px) 68px, 15vw"
-          className="absolute top-[12%] left-[9%] z-40 aspect-square w-[15%] min-w-10 max-w-[68px] object-contain"
+          className="absolute top-[12%] left-[9%] z-40 aspect-square w-[15%] max-w-[68px] min-w-10 object-contain"
         />
       ) : null}
       {href && !cta ? (
