@@ -1,0 +1,55 @@
+{
+  "title": "Mes contacts",
+  "intro": [
+    "Une idée, une envie de collaboration, un événement à imaginer ou simplement une question ? Écrivez à Julie !",
+    "Que vous soyez professionnel ou particulier, Maison La Recette vous accompagne pour donner vie à vos projets autour de l'alimentation durable, du podcast, de l'événementiel ou de la création de contenus.",
+    "Julie vous répondra avec plaisir pour échanger et imaginer ensemble la suite."
+  ],
+  "cta": {
+    "label": "En découvrir plus",
+    "href": "/"
+  },
+  "socialsLabel": "Je suis également sur les réseaux :",
+  "socials": [
+    {
+      "name": "Instagram",
+      "href": "https://www.instagram.com/"
+    },
+    {
+      "name": "LinkedIn",
+      "href": "https://www.linkedin.com/"
+    },
+    {
+      "name": "YouTube",
+      "href": "https://www.youtube.com/"
+    }
+  ],
+  "tabs": {
+    "quote": "Entreprise : demander un devis",
+    "contact": "Particulier : poser une question"
+  },
+  "subjects": [
+    {
+      "value": "question",
+      "label": "Une question"
+    },
+    {
+      "value": "particulier",
+      "label": "Une expérience pour particuliers"
+    },
+    {
+      "value": "devis",
+      "label": "Un devis"
+    },
+    {
+      "value": "autre",
+      "label": "Autre"
+    }
+  ],
+  "messages": {
+    "success": "Merci, votre message est bien parti. Julie vous répond sous 48 h.",
+    "error": "L'envoi a échoué. Vérifiez les champs puis réessayez.",
+    "network": "Connexion impossible. Réessayez dans un instant.",
+    "consent": "J'accepte que mes informations soient utilisées pour répondre à ma demande."
+  }
+}
