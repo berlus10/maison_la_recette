@@ -1,5 +1,18 @@
 {
   "tagline": "Podcast, studio et expériences autour de l’alimentation durable.",
   "contactEmail": "julie@maisonlarecette.fr",
-  "socialLinks": []
+  "socialLinks": [
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/larecette_maison/"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/company/la-recette-les-ingredients-du-changement/home/"
+    },
+    {
+      "label": "YouTube",
+      "url": "https://www.youtube.com/@Larecettepodcast"
+    }
+  ]
 }

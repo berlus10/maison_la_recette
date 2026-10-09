@@ -4,6 +4,7 @@ import { ButtonLink } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { TestimonialGrid } from '@/components/sections/TestimonialGrid';
 import { content } from '@/lib/content';
+import { PageBackground } from '@/components/ui/PageBackground';
 import { ExperienceShowcase } from './ExperienceShowcase';
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default async function ExperiencesPage() {
     content.getSiteSettings(),
   ]);
   return (
-    <>
+    <PageBackground src="/Vector.svg">
       <section className="pt-8 pb-8 sm:pt-12 sm:pb-10 lg:pt-16">
         <Container className="grid max-w-[1592px] gap-8 lg:grid-cols-[minmax(0,904fr)_minmax(0,525fr)] lg:items-end lg:gap-[clamp(2rem,5.73vw,6.1875rem)]">
           <div className="flex min-w-0 flex-col items-start lg:justify-between">
@@ -176,6 +177,6 @@ export default async function ExperiencesPage() {
           </div>
         </Container>
       </section>
-    </>
+    </PageBackground>
   );
 }
