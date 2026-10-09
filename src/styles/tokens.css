@@ -29,7 +29,7 @@
   /* Neutres */
   --color-cream: #fbf8f2;
   --color-header: #fdf8f2;
-  --color-footer: #d9d9d9;
+  --color-footer: var(--color-cream);
   --color-ink: #2b2119;
   --color-mark: #1e1e1e;
 

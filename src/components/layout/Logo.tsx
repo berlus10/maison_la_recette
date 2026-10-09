@@ -9,7 +9,7 @@ export function Logo() {
       width={372}
       height={94}
       priority
-      className="h-auto w-[150px] sm:w-[180px] xl:w-[200px]"
+      className="h-auto w-[110px] sm:w-[130px] xl:w-[100px]"
     />
   );
 }
